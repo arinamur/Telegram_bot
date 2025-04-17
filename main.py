@@ -3,11 +3,12 @@ import logging
 
 from aiogram import Bot, Dispatcher, types, executor
 
-from secret import TOKEN
+import os
 
 logging.basicConfig(level=logging.INFO)
 
-bot = Bot(token=TOKEN)
+token = os.getenv('TOKEN')
+bot = Bot(token=token)
 dp = Dispatcher(bot)
 USER_NAME = ''
 LEVELS = {
